@@ -1,6 +1,6 @@
 ---
 title: "Mateo Mori"
-image: "/Users/mateomoribaez/Downloads/IMG_1684.JPG"
+image: /Users/mateomoribaez/Downloads/IMG_1684.jpeg
 toc: false
 about: 
   template: jolla
