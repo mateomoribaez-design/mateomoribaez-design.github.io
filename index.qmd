@@ -1,11 +1,5 @@
 ---
-title: "mateomoribaez-design.github.io"
+title: "Mateo Mori"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+Hello! I am an environmental science data science and statistics student interested in visualizing the world through R, by learning how websites are made. I enjoy playing water polo, surfing, scuba diving, and backpacking.
