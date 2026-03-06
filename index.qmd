@@ -1,6 +1,6 @@
 ---
 title: "Mateo Mori"
-image: media/headshot.jpeg
+image: /Users/mateomoribaez/Downloads/IMG_1684.JPG
 toc: false
 about: 
   template: jolla
@@ -8,14 +8,11 @@ about:
   image-width: 17em
   links:
     - text: LinkedIn
-      href: https://www.linkedin.com/in/samanthacsik/
+      href: https://www.linkedin.com/in/mateo-mori-1a6351208/
     - text: GitHub
-      href: https://github.com/samanthacsik
+      href: https://github.com/mateomoribaez-design
     - text: Email
-      href: mailto:scsik@ucsb.edu
----
-        
-# page content excluded for brevity ~
+      href: mailto:mateomoribaez@ucsb.edu
 ---
 
 Hello! I am an environmental science data science and statistics student interested in visualizing the world through R, by learning how websites are made. I enjoy playing water polo, surfing, scuba diving, and backpacking.
