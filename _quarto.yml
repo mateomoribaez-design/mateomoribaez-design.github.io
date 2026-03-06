@@ -3,12 +3,17 @@ project:
   output-dir: docs
 
 website:
-  title: "mateomoribaez-design.github.io"
+  title: "Mateo's Personal Website"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - projects.qmd
+  page-footer:
+    background: light
+    left: Copyright 2026, Mateo Mori
+    right: Hola!
 
 format:
   html:
@@ -17,6 +22,7 @@ format:
       - brand
     css: styles.css
     toc: true
+    page-layout: full
 
 editor: visual
 
