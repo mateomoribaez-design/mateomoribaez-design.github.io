@@ -9,7 +9,6 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - projects.qmd
       - relevant_coursework.qmd
       - resume.qmd
       - Project.qmd
