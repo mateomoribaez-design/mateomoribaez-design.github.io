@@ -1,5 +1,21 @@
 ---
 title: "Mateo Mori"
+image: media/headshot.jpeg
+toc: false
+about: 
+  template: jolla
+  image-shape: round
+  image-width: 17em
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/samanthacsik/
+    - text: GitHub
+      href: https://github.com/samanthacsik
+    - text: Email
+      href: mailto:scsik@ucsb.edu
+---
+        
+# page content excluded for brevity ~
 ---
 
 Hello! I am an environmental science data science and statistics student interested in visualizing the world through R, by learning how websites are made. I enjoy playing water polo, surfing, scuba diving, and backpacking.
