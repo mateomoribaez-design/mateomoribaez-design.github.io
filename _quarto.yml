@@ -11,6 +11,8 @@ website:
       - about.qmd
       - projects.qmd
       - relevant_coursework.qmd
+      - resume.qmd
+      - Project.qmd
   page-footer:
     background: light
     left: Copyright 2026, Mateo Mori
