@@ -1,6 +1,5 @@
 ---
 title: "About Me"
-format: html
 ---
 
 If I have some free time, I am probably playing water polo, scuba diving, surfing, backpacking, or planning my next trip.
