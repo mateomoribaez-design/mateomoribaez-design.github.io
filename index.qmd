@@ -19,7 +19,7 @@ about:
       target: _blank
 ---
 
-## Welcome!
+### Welcome!
 
 Hello, I am an environmental science data science and statistics student interested in visualizing the world through R. I made this website to store my professional and academic experiences along with photos and my resume/CV all in one place.
 
