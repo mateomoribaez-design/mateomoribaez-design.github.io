@@ -3,6 +3,166 @@ title: "ENVS 193DS HW2"
 description: "A homework assignment from my Statistics for Environmental Science Class that covers multiple linear regression visualization, affective data visualization, and statistical critique."
 author:
   - name: Mateo Mori
-date: 06-01-2024
+date: 01-28-2026
 categories: [ENVS 193DS, RStudio] 
 ---
+
+---
+title: "Homework 2 Quarto"
+author: "Mateo Mori"
+format: docx
+editor: visual
+---
+
+```{r}
+#| message: false
+library(tidyverse) # load in packages
+library(janitor)
+```
+
+```{r}
+#| message: false
+lobsters <- read_csv("lobster-catch-data.csv") # read in lobster data
+my_data <- read_csv("my_data.csv")
+```
+
+## Part 2. Problems
+
+### Problem 1
+
+a.  I collected discrete data to represent the presence of the bunchgrass species across 13 different sites within the oak woodlands. I collected this type of data because it is not categorical and it only takes integer values.
+
+b.  Standard deviation would be best because it reflects the actual spread of bunchgrass counts in the data. My final answer is 1.9 bunchgrass individuals (count) rounded to 1 decimal point.
+
+```{r}
+#| message: false
+bunchgrass_count <- c (4, 6, 4, 5, 5, 4, 2, 3, 6, 4, 2, 0, 1) # saving list of numbers as an object called bunchgrass_count
+sd(bunchgrass_count) # caluculated standard deviation
+```
+
+c\. Standard error is the better description of uncertainty because it shows the precision behind the bunchgrass count mean. The standard error in this scenatio would represent the average amount I would expect the sample mean to vary from the true population mean if we were to repeat the study multiple times with the same sample size (13). My final answer is 0.5 bunchgrass individuals rounded to 1 decimal point, and this means that our sample mean is relatively precise, and that the true population mean likely falls within a narrow range around our calculated average.
+
+```{r}
+#| message: false
+sd(bunchgrass_count)/sqrt(length(bunchgrass_count)) # caluculated standard error
+```
+
+### Problem 2
+
+#### 2a.
+
+```{r}
+#| message: false
+
+lobsters_clean <- lobsters |> # introduced lobsters dataframe
+  clean_names() |> # cleaned lobsters dataframe to only show lower case letters and underscores
+  mutate(protection_type = case_when( #changed MPA and non-MPA labels to be Marine Protected Area and not protected, respectively.
+    protection_type == "MPA" ~ "Marine Protected Area",
+    protection_type == "non-MPA" ~ "not protected"
+  )) |>
+  select(protection_type, weight_lbs) # selected only these two columns to be shown in the data frame.
+
+lobsters_clean |> # introduced lobster data
+  slice_sample(n = 10) # displayed 10 random rows from the two columns of the data frame
+
+```
+
+#### 2b.
+
+```{r}
+#| message: false
+lobster_summary <- lobsters_clean |> # created new object from lobsters_clean
+  group_by(protection_type) |> # comparing protection types
+  summarize( 
+    mean = mean(weight_lbs),
+    n = length(weight_lbs),
+    sd = sd(weight_lbs)
+    ) # calculated mean, standard deviation and recorded number of observation
+lobster_summary
+
+```
+
+#### 2c.
+
+```{r}
+#| message: false
+ggplot(lobsters_clean, # introduce lobsters_clean dataframe
+       aes(x = protection_type, # x and y axis using their own column in the dataframe
+           y = weight_lbs,
+           color = protection_type, # different colors per protection type
+           shape = protection_type # different shape per protection type
+           )) + 
+  geom_jitter( # show data in jitterplot format
+    height = 0,
+    width = 0.1,
+    alpha = 0.6,
+    size = 2 # change the width of the horizontal jitter spread, the transparency of the points, and the size of each of the points.
+  ) +
+  geom_pointrange(data = lobster_summary,
+                  aes(x = protection_type, # x is protection type
+                      y = mean, # y is mean
+                      ymin = mean - sd, # lower bound
+                      ymax = mean + sd), # upper bound
+                  color = "black", # add black outline and decrease size a little
+                  size = 0.5,
+                  inherit.aes = FALSE) +
+  scale_color_manual(values = c("steelblue", "forestgreen")) + # manually changes colors of the two different sample groups
+  theme_minimal() + # changed theme to not be the default
+  theme(legend.position = "none") + # removes legend
+  labs( # creates axis labels
+    x = "Protection Type",
+    y = "Mean trapped lobster weight (lbs)"
+  )
+```
+
+#### 2d.
+
+Null Hypothesis: The mean trapped weight of California spiny lobster is the same in MPA and non-MPA sites
+
+Alternative Hypothesis: The mean trapped weight of California spiny lobster differs between MPA and non-MPA sites
+
+#### 2e.
+
+```{r}
+#| message: false
+ggplot(data = lobsters_clean, # indroduced dataframe to be used in the plot
+       aes(sample = weight_lbs)) + # made y - axis
+  geom_qq_line(color = "blue") + # 
+  geom_qq() + # create qq plot with the data introduced above
+  facet_wrap(~ protection_type) # shows protection categories separately
+```
+
+#### 2f.
+
+The variable of interest is normally distributed because the shape of the distribution falls on the reference line in the QQ plot. Not only does the general shape align with the reference line, but the few outliers in the individual lobster weights can be seen as not significant enough to indicate skewness, accepting the data as normally distributed. Both "Marine Protected Areas" and "not protected" groups show these patterns.
+
+#### 2g.
+
+Using the F-test result ($p = 0.29$), there is no significant difference in the variance of lobster weights between the Marine Protected Area and non-protected sites, so equal variance can be assumed between the two data sets. This means that the spread of data points around the mean are roughly the same across the two groups, backing up the claim of there being no significant difference.
+
+```{r}
+#| message: false
+var.test(weight_lbs ~ protection_type, # compared the variance of the two normally distributed samples, seeing if they are equal or not.
+         data = lobsters_clean) # introduced the dataframe used for the variance test
+```
+
+#### 2h.
+
+```{r}
+#| message: false
+t.test(
+  weight_lbs ~ protection_type, # formula: response variable ~ grouping variable
+  var.equal = TRUE, # argument for equal/unequal variances (variances should be equal)
+  data = lobsters_clean # data: lobsters data frame
+)
+```
+
+#### 2i.
+
+-   Using a t-test is appropriate for this situation because we are comparing mean lobster weights between two independent groups (MPA and non-protected) using a continuous response variable.
+
+-   Normal distribution was evaluated through the data points following the reference in the QQ plot, and homogeneity of variance was assessed by using an F-test to compare two variances.
+
+#### 2j.
+
+We found a significant difference in mean lobster weight between MPA (n = 35) and non-protected areas (n = 30) (Students t-test, t(63) = -10.08, p \< 0.001, a = 0.05).
