@@ -2,3 +2,17 @@
 title: "Relevant Coursework"
 format: html
 ---
+
+## [A few Environmental Studies courses I've taken]{.underline}
+
+### **Field Study of California’s Coast**
+
+-   We visited various sites along the coast that had restoration projects and interesting physical and social geographic features.
+
+-   Research project on the effects of seasonal changes in kelp forest density on beach wrack and beach productivity.
+
+-   Performed native plant identification and did vegetation transect surveys.
+
+-   Taught by [Ian Walker](https://www.geog.ucsb.edu/people/faculty/ian-walker)
+
+![Doing vegetation cover studies on dune restoration project at Santa Monica Beach.](images/geog194.jpg)

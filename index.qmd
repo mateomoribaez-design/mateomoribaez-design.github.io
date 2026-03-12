@@ -1,6 +1,6 @@
 ---
 title: "Mateo Mori"
-image: IMG_1684.jpeg
+image: images/IMG_1684.jpeg
 toc: false
 about: 
   template: jolla

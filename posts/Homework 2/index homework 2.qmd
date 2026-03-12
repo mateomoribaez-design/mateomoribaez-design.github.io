@@ -1,0 +1,8 @@
+---
+title: "ENVS 193DS HW2"
+description: "A homework assignment from my Statistics for Environmental Science Class that covers multiple linear regression visualization, affective data visualization, and statistical critique."
+author:
+  - name: Mateo Mori
+date: 06-01-2024
+categories: [ENVS 193DS, RStudio] 
+---

@@ -40,7 +40,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-91903e51b979062d4d184304d30a9be9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2e5754ae120d503d363c112a2d112bda.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -123,11 +126,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a-few-environmental-studies-courses-ive-taken" id="toc-a-few-environmental-studies-courses-ive-taken" class="nav-link active" data-scroll-target="#a-few-environmental-studies-courses-ive-taken"><u>A few Environmental Studies courses I’ve taken</u></a>
+  <ul class="collapse">
+  <li><a href="#field-study-of-californias-coast" id="toc-field-study-of-californias-coast" class="nav-link" data-scroll-target="#field-study-of-californias-coast"><strong>Field Study of California’s Coast</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -136,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -148,8 +160,26 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="a-few-environmental-studies-courses-ive-taken" class="level2">
+<h2 class="anchored" data-anchor-id="a-few-environmental-studies-courses-ive-taken"><u>A few Environmental Studies courses I’ve taken</u></h2>
+<section id="field-study-of-californias-coast" class="level3">
+<h3 class="anchored" data-anchor-id="field-study-of-californias-coast"><strong>Field Study of California’s Coast</strong></h3>
+<ul>
+<li><p>We visited various sites along the coast that had restoration projects and interesting physical and social geographic features.</p></li>
+<li><p>Research project on the effects of seasonal changes in kelp forest density on beach wrack and beach productivity.</p></li>
+<li><p>Performed native plant identification and did vegetation transect surveys.</p></li>
+<li><p>Taught by <a href="https://www.geog.ucsb.edu/people/faculty/ian-walker">Ian Walker</a></p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/geog194.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Doing vegetation cover studies on dune restoration project at Santa Monica Beach."><img src="images/geog194.jpg" class="img-fluid figure-img" alt="Doing vegetation cover studies on dune restoration project at Santa Monica Beach."></a></p>
+<figcaption>Doing vegetation cover studies on dune restoration project at Santa Monica Beach.</figcaption>
+</figure>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -566,6 +596,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

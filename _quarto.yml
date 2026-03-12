@@ -13,18 +13,17 @@ website:
       - resume.qmd
       - Project.qmd
   page-footer:
-    background: light
     left: Copyright 2026, Mateo Mori
     right: Hola!
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: flatly
+    mainfont: Teachers
     css: styles.css
     toc: true
     page-layout: full
+    lightbox: true
 
 editor: visual
 

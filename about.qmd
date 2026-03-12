@@ -2,3 +2,21 @@
 title: "About Me"
 format: html
 ---
+
+If I have some free time, I am probably playing water polo, scuba diving, surfing, backpacking, or planning my next trip.
+
+## [A few things I enjoy doing]{.underline}
+
+::: {layout="[[1, 1], [1, 1]]"}
+![Backpacking the Pacific Crest Trail with my mom near San Diego. This was my first ever backpacking experience and getting a taste of the great outdoors has only made me want to do it more. Fall 2025](images/IMG_3352.jpg){group="Hobbies"}
+
+![Playing for UCSB Men's Water Polo Club is a blast, especially when I can start a game next to my roomate Chris. Winter 2026](images/IMG_8544.jpg){group="Hobbies"}
+
+![Devereux, Fall 2025](images/IMG_7260.MOV)
+
+Tidepooling at Devereux Beach in Isla Vista is one of my favorite ways to experience nature. Doing it at night takes things to the next level, and going with my Aquatic Biology roomates turned this into such a fun learning opportunity. Here I spotted a California Two-spot Octopus (*Octopus bimaculoides*) immediately after telling my roomates that the one thing I wanted to find that night was an octopus. (I then proceeded to find another octopus!)
+
+![Summer, 2025](images/IMG_1768.JPEG){group="Hobbies"}
+
+Catching non-native Peacock Bass (*Cichla ocellaris*) with my Venezuelan cousins in a backyard freshwater river in Miami, Florida. Visiting my cousins in Florida is always so much fun, and we love going to our hidden little spots that we have been going to for years.
+:::
