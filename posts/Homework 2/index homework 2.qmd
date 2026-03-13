@@ -1,17 +1,21 @@
 ---
 title: "ENVS 193DS HW2"
 description: "A homework assignment from my Statistics for Environmental Science Class that covers multiple linear regression visualization, affective data visualization, and statistical critique."
-author:
+author: 
   - name: Mateo Mori
-date: 01-28-2026
+    url: https://mateomoribaez-design.github.io/
+date: 03-12-2026
 categories: [ENVS 193DS, RStudio] 
+url: https://mateomoribaez-design.github.io/posts/Homework-2/
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---
 
 ---
 title: "Homework 2 Quarto"
 author: "Mateo Mori"
-format: docx
+format: html
 editor: visual
+toc: true
 ---
 
 ```{r}
